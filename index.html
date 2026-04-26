@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Client Feedback</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+        src: url("Georgia.ttf");
+    } * {
+        margin: 0;
+        padding: 0;
+    } body {
+        background: whitesmoke;
+    } #page {
+        width: 928px;
+        height: auto;
+        background: white;
+        border: 1px solid white;
+        box-shadow: 2px 3px 6px pink;
+        margin: 0 auto;
+    } main {
+        width: 80%;
+        height: auto;
+        margin: 36px auto;
+    } header img {
+        width: 100%;
+        margin-bottom: 24px;
+    } header h1 {
+        font: 48pt/1.4em "";
+        text-align: center;
+        margin-top: 24px;
+        text-shadow: 2px 3px 6px pink;
+    } header p {
+        font: 14pt/1.4em Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+        width: 65ch;
+        margin: 24px auto;
+    } li {
+        width: 20%;
+        height: 35px;
+        border-radius: 6px;
+        list-style: none;
+        text-align: center;
+        font: 14pt/1.8em Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace"sans-serif;
+        background: rgba(125,147,151,0.50);
+        margin: 0 auto;
+        display: block;
+    } a li {
+        color: hotpink;
+    } a li:hover {
+        background: blue;
+    } a {
+        text-decoration: none;
+    } form {
+        width: 600px;
+        margin: 0 auto;
+        border-radius: 12px;
+        background: rgba(125,147,151,0.50);
+        padding: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font: 14pt/1.4em Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    } #personal input {
+        width: 100%;
+        height: 35px;
+    } #personal textarea {
+        width: 100%;
+    } label {
+        margin-top: 12px;
+    } select, input[type="submit"] {
+        font: 12pt/1.4em Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+    } input[type="submit"] {
+        width: 200px;
+        height: 40px;
+        margin: 24px auto;
+        background: lavender;
+        border-radius: 6px;
+    } input[type="submit"]:hover {
+        opacity: 0.75;
+    } fieldset {
+        margin: 8px 0 8px 0;
+        padding: 12px;
+    } footer {
+        width: 80%;
+        height: auto;
+        min-height: 100px;
+        margin: 0 auto 48px auto;
+    } footer p {
+        font: 14pt/1.4em Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"serif;
+    } footer h2 {
+        font: bold 14pt/1.4em Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"serif;
+        text-align: center;
+    }
+</style>
+<script language="JavaScript">
+    function toggle(source) {
+        checkboxes = document.getElementsByName('system');
+        for(var checkbox in checkboxes)
+        checkboxes[checkbox].checked = source.checked;
+    }
+</script>
+</head>
+
+<body>
+    <div id="page">
+		<header>
+            <h1>Contact Us!</h1>
+        </header>
+        <main>
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="6ea120b7-cd45-45b2-9d04-d25d239c2088">
+
+        <div id="personal">        
+            <label>Name</label>
+            <input type="text" name="name" required>
+            <label>Email</label>
+            <input type="email" name="email" required>
+            <label>Subject</label>
+            <input type="text" name="title" required>
+            <label>Message</label>
+            <textarea name="message" rows="6" cols="72" required></textarea>
+        </div>        
+        <fieldset>
+            <label>Reason for Contacting Us:</label><br/>
+            <input type="radio" id="General" name="reason" value="General inquiry">
+            <label for="html">General inquiry</label>
+            <br/>
+            <input type="radio" id="Request" name="reason" value="Request">
+            <label for="css">Request a quote or pricing</label>
+            <br/>
+            <input type="radio" id="Book" name="reason" value="Book">
+            <label for="Book"> Book an service</label>
+            <br/>
+            <input type="radio" id="Billing" name="reason" value="Billing">
+            <label for="other"> Billing or payment question</label>
+			 <label></label><br/>
+            <input type="radio" id="Feedback" name="reason" value="Feedback">
+            <label for="html">Feedback or complaint</label>
+            <br/>
+        </fieldset>
+        <fieldset>
+            <label>What best describes your reason for contacting us today?</label><br/>
+            <input type="checkbox" id="system" name="system" value="Mac"  onClick="toggle(this)">
+            <label for="system1"> I need more information before deciding</label><br/>
+            <input type="checkbox" id="system1" name="system" value="Mac">
+            <label for="system1">I’m ready to purchase/book</label><br/>
+            <input type="checkbox" id="system2" name="system" value="Windows">
+            <label for="system2"> I need help with an existing service</label><br/>
+            <input type="checkbox" id="system3" name="system" value="UNIX">
+            <label for="system3"> Other</label>
+        </fieldset>
+        <fieldset>
+            <label for="time">What is your preferred method of communication?</label>
+            <select id="time" name="time">
+            <option value="asap">Email</option>
+            <option value="week">Phone Call</option>
+            <option value="month">Zoom Meeting</option>
+            <option value="quarter">In-person meeting</option>
+            </select>
+        </fieldset>           
+    <input type="submit" value="Send">
+</form>
+</main>
+</div>
+</body>
+</html>
